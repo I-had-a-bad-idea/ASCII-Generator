@@ -10,3 +10,10 @@ if __name__ == "__main__":
     text = input("Enter text to convert to ASCII: ")
 
     print_ascii(ASCII_generator.text_to_ascii(text.upper(), font_stadard.font))
+
+    image_path = input("Enter image path to convert to ASCII: ")
+    ascii_image = ASCII_generator.image_to_ascii(image_path)
+    if ascii_image:
+        print(ascii_image)
+    else:
+        print("Failed to convert image to ASCII.")
