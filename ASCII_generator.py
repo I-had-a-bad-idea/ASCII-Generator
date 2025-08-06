@@ -1,6 +1,7 @@
 from PIL import Image
 from PIL import ImageEnhance
 from Fonts.pixels import ASCII_CHARS as ASCII_CHARS
+import cv2 as cv
 
 def text_to_ascii(text, font):
 
@@ -60,3 +61,34 @@ def make_grayscale(image):
     image = enhancer.enhance(2.0)  
 
     return image
+
+def play_video_as_ascii(video_path, new_width = 100):
+    cap = cv.VideoCapture(video_path)
+    if not cap.isOpened():
+        print("Error: Could not open video.")
+        return
+
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            break
+
+        frame = resize_image(Image.fromarray(frame), new_width)
+        # frame = Image.fromarray(frame)
+        frame = make_grayscale(frame)
+        ascii_frame = pixels_to_ascii(frame)
+        pixel_count = len(ascii_frame)
+        ascii_img = "\n".join(
+            ascii_frame[i:(i + new_width)] for i in range(0, pixel_count, new_width)
+        )
+        
+        clear_console()
+
+        print(ascii_img)
+        print("\n" + "=" * new_width + "\n")  # Separator for frames
+
+    cap.release()
+
+def clear_console():
+    import os
+    print("\033[H", end="")

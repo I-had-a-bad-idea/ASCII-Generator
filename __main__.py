@@ -17,3 +17,6 @@ if __name__ == "__main__":
         print(ascii_image)
     else:
         print("Failed to convert image to ASCII.")
+    
+    video_path = input("Enter video path to convert to ASCII: ")
+    ASCII_generator.play_video_as_ascii(video_path)
