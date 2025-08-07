@@ -1,7 +1,7 @@
 from PIL import Image
 from PIL import ImageEnhance
 from pixels import ASCII_CHARS as ASCII_CHARS
-import cv2 as cv
+from cv2 import VideoCapture
 import os
 
 def print_ascii(ascii_lines):
@@ -51,8 +51,6 @@ def pixels_to_ascii(image):
 
     lines : list = [""]
 
-    print(f"Image size: {width}x{height}")
-
     block_side_length = 4
 
                                # Make sure we are always away from edge
@@ -96,8 +94,8 @@ def make_grayscale(image):
 
     return image
 
-def play_video_as_ascii(video_path, new_width = 200):
-    cap = cv.VideoCapture(video_path)
+def play_video_as_ascii(video_path, new_width = 400):
+    cap = VideoCapture(video_path)
     if not cap.isOpened():
         print("Error: Could not open video.")
         return
@@ -119,10 +117,11 @@ def play_video_as_ascii(video_path, new_width = 200):
         #     ascii_frame[i:(i + new_width)] for i in range(0, pixel_count, new_width)
         # )
         
+        # wipe_console()
         clear_console()
 
         print_ascii(ascii_frame)
-        print("\n" + "=" * new_width + "\n")  # Separator for frames
+#        print("\n" + "=" * new_width + "\n")  # Separator for frames
 
     cap.release()
 
@@ -130,5 +129,4 @@ def wipe_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def clear_console():
-    import os
     print("\033[H", end="")
