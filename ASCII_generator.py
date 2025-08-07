@@ -1,6 +1,6 @@
 from PIL import Image
 from PIL import ImageEnhance
-from Fonts.pixels import ASCII_CHARS as ASCII_CHARS
+from pixels import ASCII_CHARS as ASCII_CHARS
 import cv2 as cv
 import os
 
