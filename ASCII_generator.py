@@ -37,10 +37,7 @@ def image_to_ascii(image_path, new_width = 400):
 
     ascii_str = pixels_to_ascii(image)
     pixel_count = len(ascii_str)
-    # ascii_img = "\n".join(
-    #     ascii_str[i:(i + new_width)] for i in range(0, pixel_count, new_width)
-    # )
-    
+
     print_ascii(ascii_str)
 
 
@@ -65,9 +62,6 @@ def pixels_to_ascii(image):
                 row += " "
         lines.append(row)
 
-    # for pixel in pixels:
-    #     # Map brightness to character index
-    #     ascii_str += ASCII_CHARS[pixel * (len(ASCII_CHARS) - 1) // 255]
     
     return lines
 
@@ -109,20 +103,12 @@ def play_video_as_ascii(video_path, new_width = 400):
             break
 
         frame = resize_image(Image.fromarray(frame), new_width)
-        # frame = Image.fromarray(frame)
         frame = make_grayscale(frame)
         ascii_frame = pixels_to_ascii(frame)
         pixel_count = len(ascii_frame)
-        # ascii_img = "\n".join(
-        #     ascii_frame[i:(i + new_width)] for i in range(0, pixel_count, new_width)
-        # )
-        
-        # wipe_console()
         clear_console()
 
         print_ascii(ascii_frame)
-#        print("\n" + "=" * new_width + "\n")  # Separator for frames
-
     cap.release()
 
 def wipe_console():
