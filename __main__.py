@@ -33,7 +33,9 @@ if __name__ == "__main__":
             print("3. = Font")
             print("4. + Font")
             print("5. . Font")
-            font_choice = input("Choose a font (1-5): ").strip()
+            print("6. @ Font")
+            print("7. & Font")
+            font_choice = input("Choose a font (1-7): ").strip()
             font = None
             if font_choice == "1":
                 font = fonts.HASH_FONT
@@ -45,6 +47,10 @@ if __name__ == "__main__":
                 font = fonts.PLUS_FONT
             elif font_choice == "5":
                 font = fonts.DOT_FONT
+            elif font_choice == "6":
+                font = fonts.AT_SIGN_FONT
+            elif font_choice == "7":
+                font = fonts.AMPERSAND_FONT
             else:
                 print("Invalid font choice. Using default font.")
                 font = fonts.HASH_FONT
