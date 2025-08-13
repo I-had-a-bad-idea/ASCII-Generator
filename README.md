@@ -45,13 +45,13 @@ Check the [releases](https://github.com/I-had-a-bad-idea/ASCII-Generator/release
 
 ## Project Structure
 
-ASCII-Generator/
-├── __main__.py           # Entry-Point + User interaction
-├── ASCII_generator       # Core functionality
-├── fonts.py              # All fonts for the text
-├── pixels.py             # The characters used for image/video creation
-├── requirements.txt      # List of dependencies
-└── README.md             # README
+    ASCII-Generator/
+    ├── __main__.py           # Entry-Point + User interaction
+    ├── ASCII_generator       # Core functionality
+    ├── fonts.py              # All fonts for the text
+    ├── pixels.py             # The characters used for image/video creation
+    ├── requirements.txt      # List of dependencies
+    └── README.md             # README
 
 ## Contributing
 
