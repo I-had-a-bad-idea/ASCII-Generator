@@ -13,11 +13,13 @@ if __name__ == "__main__":
 
         if what_to_do not in ["text", "image", "video"]:
             print("Invalid option. Please choose 'text', 'image', or 'video'.")
+            continue
 
         save_to_file = input("Do you want to save the output to a file? (y/n): ").strip().lower()
         
         if save_to_file not in ["y", "n"]:
             print("Invalid option. Please choose 'y', or 'n'.")
+            continue
         
         if save_to_file == "y":
             ASCII_generator.save_to_file = True
@@ -26,14 +28,15 @@ if __name__ == "__main__":
             video_path = input("Enter video path to convert to ASCII: ")
             ASCII_generator.play_video_as_ascii(video_path)
         
-        if what_to_do == "image":
+        elif what_to_do == "image":
             image_path = input("Enter image path to convert to ASCII: ")
             ASCII_generator.image_to_ascii(image_path)
         
-        if what_to_do == "text":
+        elif what_to_do == "text":
             text = input("Enter text to convert to ASCII: ")
             if not text:
                 print("No text provided. Exiting.")
+                continue
             print("Available fonts:")
             print("1. # Font")
             print("2. * Font")

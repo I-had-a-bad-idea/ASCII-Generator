@@ -13,9 +13,9 @@ def print_ascii(ascii_lines):
     for line in ascii_lines:
         print(line)
         text += line + "\n"
-    
-    with open(OUTPUT_FILE, "a") as f:
-        f.write(text)
+    if save_to_file:
+        with open(OUTPUT_FILE, "a") as f:
+            f.write(text)
 
 def text_to_ascii(text, font):
 
