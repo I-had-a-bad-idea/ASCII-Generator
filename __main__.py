@@ -14,7 +14,7 @@ if __name__ == "__main__":
         if what_to_do not in ["text", "image", "video"]:
             print("Invalid option. Please choose 'text', 'image', or 'video'.")
 
-        save_to_file = input("Do you want to save the output to a file? (y/n)").strip().lower()
+        save_to_file = input("Do you want to save the output to a file? (y/n): ").strip().lower()
         
         if save_to_file not in ["y", "n"]:
             print("Invalid option. Please choose 'y', or 'n'.")

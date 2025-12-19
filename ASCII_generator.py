@@ -9,8 +9,13 @@ OUTPUT_FILE = "output.txt"
 save_to_file = False
 
 def print_ascii(ascii_lines):
+    text = ""
     for line in ascii_lines:
         print(line)
+        text += line + "\n"
+    
+    with open(OUTPUT_FILE, "a") as f:
+        f.write(text)
 
 def text_to_ascii(text, font):
 
@@ -53,7 +58,7 @@ def pixels_to_ascii(image):
 
     block_side_length = 4
 
-                               # Make sure we are always away from edge
+    # Make sure we are always away from edge
     for y in range(0, height - block_side_length + 1, block_side_length):
         row = ""
         for x in range(0, width - block_side_length + 1, block_side_length):
