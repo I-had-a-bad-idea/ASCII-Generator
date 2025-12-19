@@ -22,11 +22,7 @@ ASCII-Generator is a Python tool to convert text, images, and videos into ASCII-
 
 ## Releases
 
-Check the [releases](https://github.com/I-had-a-bad-idea/ASCII-Generator/releases) page for the latest versions. Each release includes:
-
-    Windows executable (.exe)
-
-    Release notes with change log
+Check the [releases](https://github.com/I-had-a-bad-idea/ASCII-Generator/releases) page for the latest versions.
 
 ## Usage
 
