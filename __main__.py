@@ -2,7 +2,6 @@ import fonts as fonts
 import ASCII_generator
 
 
-
 if __name__ == "__main__":
 
     ASCII_generator.wipe_console()
@@ -14,7 +13,15 @@ if __name__ == "__main__":
 
         if what_to_do not in ["text", "image", "video"]:
             print("Invalid option. Please choose 'text', 'image', or 'video'.")
+
+        save_to_file = input("Do you want to save the output to a file? (y/n)").strip().lower()
         
+        if save_to_file not in ["y", "n"]:
+            print("Invalid option. Please choose 'y', or 'n'.")
+        
+        if save_to_file == "y":
+            ASCII_generator.save_to_file = True
+
         if what_to_do == "video":
             video_path = input("Enter video path to convert to ASCII: ")
             ASCII_generator.play_video_as_ascii(video_path)

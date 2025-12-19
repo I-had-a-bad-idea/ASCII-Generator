@@ -4,6 +4,10 @@ from pixels import ASCII_CHARS as ASCII_CHARS
 from cv2 import VideoCapture
 import os
 
+OUTPUT_FILE = "output.txt"
+
+save_to_file = False
+
 def print_ascii(ascii_lines):
     for line in ascii_lines:
         print(line)
@@ -36,7 +40,6 @@ def image_to_ascii(image_path, new_width = 400):
     image = make_grayscale(image)
 
     ascii_str = pixels_to_ascii(image)
-    pixel_count = len(ascii_str)
 
     print_ascii(ascii_str)
 
@@ -105,7 +108,6 @@ def play_video_as_ascii(video_path, new_width = 400):
         frame = resize_image(Image.fromarray(frame), new_width)
         frame = make_grayscale(frame)
         ascii_frame = pixels_to_ascii(frame)
-        pixel_count = len(ascii_frame)
         clear_console()
 
         print_ascii(ascii_frame)
